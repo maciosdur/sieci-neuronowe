@@ -1,0 +1,18 @@
+﻿Train: (242, 28)  Test: (61, 28)
+
+=== Rozmiar warstwy ukrytej (1 warstwa ukryta, liczba cech = 28) ===
+h = 2                koszt train = 0.301  koszt test = 0.399  (min 0.376 w epoce  4245)  accuracy = 0.820  precision = 0.774  recall = 0.857  F1 = 0.814
+h = 4                koszt train = 0.264  koszt test = 0.385  (min 0.329 w epoce  3431)  accuracy = 0.836  precision = 0.821  recall = 0.821  F1 = 0.821
+h = 28               koszt train = 0.256  koszt test = 0.386  (min 0.332 w epoce  2862)  accuracy = 0.836  precision = 0.800  recall = 0.857  F1 = 0.828
+h = 128              koszt train = 0.234  koszt test = 0.401  (min 0.332 w epoce  2608)  accuracy = 0.836  precision = 0.800  recall = 0.857  F1 = 0.828
+h = 512              koszt train = 0.219  koszt test = 0.416  (min 0.334 w epoce  2368)  accuracy = 0.803  precision = 0.767  recall = 0.821  F1 = 0.793
+
+=== Normalizacja danych (1 warstwa ukryta, h = 28) ===
+znormalizowane       koszt train = 0.256  koszt test = 0.386  (min 0.332 w epoce  2862)  accuracy = 0.836  precision = 0.800  recall = 0.857  F1 = 0.828
+nieznormalizowane    koszt train = 0.547  koszt test = 0.626  (min 0.613 w epoce  7488)  accuracy = 0.607  precision = 0.543  recall = 0.893  F1 = 0.676
+
+=== Liczba warstw ukrytych (każda h = 28) ===
+0 warstw ukrytych    koszt train = 0.308  koszt test = 0.333  (min 0.330 w epoce  5942)  accuracy = 0.852  precision = 0.852  recall = 0.821  F1 = 0.836
+1 warstw ukrytych    koszt train = 0.256  koszt test = 0.386  (min 0.332 w epoce  2862)  accuracy = 0.836  precision = 0.800  recall = 0.857  F1 = 0.828
+2 warstw ukrytych    koszt train = 0.316  koszt test = 0.344  (min 0.344 w epoce 10000)  accuracy = 0.852  precision = 0.852  recall = 0.821  F1 = 0.836
+3 warstw ukrytych    koszt train = 0.690  koszt test = 0.690  (min 0.690 w epoce  1913)  accuracy = 0.541  precision = 0.000  recall = 0.000  F1 = 0.000
