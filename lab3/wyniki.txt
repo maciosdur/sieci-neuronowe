@@ -1,18 +1,29 @@
-﻿Train: (242, 28)  Test: (61, 28)
+Train: (242, 28)  Test: (61, 28)
 
-=== Rozmiar warstwy ukrytej (1 warstwa ukryta, liczba cech = 28) ===
-h = 2                koszt train = 0.301  koszt test = 0.399  (min 0.376 w epoce  4245)  accuracy = 0.820  precision = 0.774  recall = 0.857  F1 = 0.814
-h = 4                koszt train = 0.264  koszt test = 0.385  (min 0.329 w epoce  3431)  accuracy = 0.836  precision = 0.821  recall = 0.821  F1 = 0.821
-h = 28               koszt train = 0.256  koszt test = 0.386  (min 0.332 w epoce  2862)  accuracy = 0.836  precision = 0.800  recall = 0.857  F1 = 0.828
-h = 128              koszt train = 0.234  koszt test = 0.401  (min 0.332 w epoce  2608)  accuracy = 0.836  precision = 0.800  recall = 0.857  F1 = 0.828
-h = 512              koszt train = 0.219  koszt test = 0.416  (min 0.334 w epoce  2368)  accuracy = 0.803  precision = 0.767  recall = 0.821  F1 = 0.793
+=== Rozmiar warstwy ukrytej (1 warstwa ukryta, liczba cech = 28) ===  (średnia ± odchylenie z 3 seedów)
+h = 2                koszt train = 0.296 ± 0.003  koszt test = 0.371 ± 0.021  min koszt test = 0.350 ± 0.019 (epoka 4880 ± 1692)  koniec plateau: epoka 1882 ± 1094 (nie wyszło: 0/3)
+                     accuracy = 0.825 ± 0.008  precision = 0.790 ± 0.022  recall = 0.845 ± 0.017  F1 = 0.816 ± 0.004  [F1 dla seedów: 0.814, 0.821, 0.814]
+h = 4                koszt train = 0.276 ± 0.013  koszt test = 0.371 ± 0.012  min koszt test = 0.333 ± 0.004 (epoka 4543 ± 818)  koniec plateau: epoka 1360 ± 72 (nie wyszło: 0/3)
+                     accuracy = 0.836 ± 0.000  precision = 0.821 ± 0.000  recall = 0.821 ± 0.000  F1 = 0.821 ± 0.000  [F1 dla seedów: 0.821, 0.821, 0.821]
+h = 28               koszt train = 0.261 ± 0.004  koszt test = 0.381 ± 0.005  min koszt test = 0.332 ± 0.001 (epoka 2893 ± 26)  koniec plateau: epoka 907 ± 18 (nie wyszło: 0/3)
+                     accuracy = 0.842 ± 0.008  precision = 0.809 ± 0.013  recall = 0.857 ± 0.000  F1 = 0.832 ± 0.007  [F1 dla seedów: 0.828, 0.842, 0.828]
+h = 128              koszt train = 0.239 ± 0.005  koszt test = 0.399 ± 0.003  min koszt test = 0.333 ± 0.001 (epoka 2610 ± 20)  koniec plateau: epoka 609 ± 7 (nie wyszło: 0/3)
+                     accuracy = 0.831 ± 0.008  precision = 0.791 ± 0.012  recall = 0.857 ± 0.000  F1 = 0.823 ± 0.007  [F1 dla seedów: 0.828, 0.828, 0.814]
+h = 512              koszt train = 0.218 ± 0.004  koszt test = 0.417 ± 0.004  min koszt test = 0.334 ± 0.000 (epoka 2396 ± 26)  koniec plateau: epoka 402 ± 14 (nie wyszło: 0/3)
+                     accuracy = 0.809 ± 0.008  precision = 0.769 ± 0.004  recall = 0.833 ± 0.017  F1 = 0.800 ± 0.010  [F1 dla seedów: 0.793, 0.814, 0.793]
 
-=== Normalizacja danych (1 warstwa ukryta, h = 28) ===
-znormalizowane       koszt train = 0.256  koszt test = 0.386  (min 0.332 w epoce  2862)  accuracy = 0.836  precision = 0.800  recall = 0.857  F1 = 0.828
-nieznormalizowane    koszt train = 0.547  koszt test = 0.626  (min 0.613 w epoce  7488)  accuracy = 0.607  precision = 0.543  recall = 0.893  F1 = 0.676
+=== Normalizacja danych (1 warstwa ukryta, h = 28) ===  (średnia ± odchylenie z 3 seedów)
+znormalizowane       koszt train = 0.261 ± 0.004  koszt test = 0.381 ± 0.005  min koszt test = 0.332 ± 0.001 (epoka 2893 ± 26)  koniec plateau: epoka 907 ± 18 (nie wyszło: 0/3)
+                     accuracy = 0.842 ± 0.008  precision = 0.809 ± 0.013  recall = 0.857 ± 0.000  F1 = 0.832 ± 0.007  [F1 dla seedów: 0.828, 0.842, 0.828]
+nieznormalizowane    koszt train = 0.529 ± 0.013  koszt test = 0.692 ± 0.086  min koszt test = 0.598 ± 0.011 (epoka 3457 ± 2851)  koniec plateau: epoka 326 ± 171 (nie wyszło: 0/3)
+                     accuracy = 0.661 ± 0.047  precision = 0.634 ± 0.080  recall = 0.714 ± 0.127  F1 = 0.658 ± 0.019  [F1 dla seedów: 0.676, 0.667, 0.632]
 
-=== Liczba warstw ukrytych (każda h = 28) ===
-0 warstw ukrytych    koszt train = 0.308  koszt test = 0.333  (min 0.330 w epoce  5942)  accuracy = 0.852  precision = 0.852  recall = 0.821  F1 = 0.836
-1 warstw ukrytych    koszt train = 0.256  koszt test = 0.386  (min 0.332 w epoce  2862)  accuracy = 0.836  precision = 0.800  recall = 0.857  F1 = 0.828
-2 warstw ukrytych    koszt train = 0.316  koszt test = 0.344  (min 0.344 w epoce 10000)  accuracy = 0.852  precision = 0.852  recall = 0.821  F1 = 0.836
-3 warstw ukrytych    koszt train = 0.690  koszt test = 0.690  (min 0.690 w epoce  1913)  accuracy = 0.541  precision = 0.000  recall = 0.000  F1 = 0.000
+=== Liczba warstw ukrytych (każda h = 28) ===  (średnia ± odchylenie z 3 seedów)
+0 warstw ukrytych    koszt train = 0.308 ± 0.000  koszt test = 0.333 ± 0.000  min koszt test = 0.330 ± 0.000 (epoka 5906 ± 25)  koniec plateau: epoka 48 ± 2 (nie wyszło: 0/3)
+                     accuracy = 0.852 ± 0.000  precision = 0.852 ± 0.000  recall = 0.821 ± 0.000  F1 = 0.836 ± 0.000  [F1 dla seedów: 0.836, 0.836, 0.836]
+1 warstwa ukryta     koszt train = 0.261 ± 0.004  koszt test = 0.381 ± 0.005  min koszt test = 0.332 ± 0.001 (epoka 2893 ± 26)  koniec plateau: epoka 907 ± 18 (nie wyszło: 0/3)
+                     accuracy = 0.842 ± 0.008  precision = 0.809 ± 0.013  recall = 0.857 ± 0.000  F1 = 0.832 ± 0.007  [F1 dla seedów: 0.828, 0.842, 0.828]
+2 warstwy ukryte     koszt train = 0.386 ± 0.102  koszt test = 0.405 ± 0.096  min koszt test = 0.405 ± 0.096 (epoka 10000 ± 0)  koniec plateau: epoka 9031 ± 575 (nie wyszło: 0/3)
+                     accuracy = 0.852 ± 0.000  precision = 0.844 ± 0.011  recall = 0.833 ± 0.017  F1 = 0.838 ± 0.003  [F1 dla seedów: 0.836, 0.836, 0.842]
+3 warstwy ukryte     koszt train = 0.690 ± 0.000  koszt test = 0.690 ± 0.000  min koszt test = 0.690 ± 0.000 (epoka 1928 ± 17)  koniec plateau: epoka — (nie wyszło: 3/3)
+                     accuracy = 0.541 ± 0.000  precision = 0.000 ± 0.000  recall = 0.000 ± 0.000  F1 = 0.000 ± 0.000  [F1 dla seedów: 0.000, 0.000, 0.000]

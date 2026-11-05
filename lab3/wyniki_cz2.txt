@@ -1,0 +1,61 @@
+=== Test ADAM na f(w) = (w - 3)^2, start w = 5, lr = 0.01 ===
+skala gradientu  1e+00: pierwszy krok = 0.01000, w po 3000 krokach = 3.0000
+skala gradientu  1e+06: pierwszy krok = 0.01000, w po 3000 krokach = 3.0000
+
+=== Inicjalizacja wag (5 warstw ukrytych, GD lr = 0.01, pełny zbiór) ===  (2000 epok, średnia ± odchylenie z 3 seedów)
+init N(0, 0.01)          koniec plateau: — (nie wyszło: 3/3)  rozbieżność: 0/3 (epoka —)  stop |ΔL|<1e-06: epoka 569 ± 0, koszt 0.69 ± 1.38e-07  [2.2 s / przebieg]
+                         koszt train: start = 0.693 ± 9.58e-11  po 1. epoce = 0.693 ± 9.63e-09  maks. = 0.693 ± 9.58e-11  |dW| warstwy 1 na starcie = 1.79e-08 ± 1.73e-09
+                         koszt train = 0.69 ± 4.19e-10  koszt test = 0.69 ± 6.55e-11  min koszt test = 0.69 ± 1.24e-10  accuracy = 0.541 ± 0.000  F1 = 0.000 ± 0.000  [F1 dla seedów: 0.000, 0.000, 0.000]
+init He                  koniec plateau: 107 ± 48 (nie wyszło: 0/3)  rozbieżność: 0/3 (epoka —)  stop |ΔL|<1e-06: epoka —, koszt —  [2.1 s / przebieg]
+                         koszt train: start = 0.782 ± 0.0699  po 1. epoce = 0.772 ± 0.0656  maks. = 0.782 ± 0.0699  |dW| warstwy 1 na starcie = 0.292 ± 0.0697
+                         koszt train = 0.0445 ± 0.0215  koszt test = 0.812 ± 0.144  min koszt test = 0.409 ± 0.0143  accuracy = 0.787 ± 0.035  F1 = 0.784 ± 0.037  [F1 dla seedów: 0.733, 0.820, 0.800]
+init N(0, 1)             koniec plateau: 126 ± 98 (nie wyszło: 1/3)  rozbieżność: 1/3 (epoka 4 ± 0)  stop |ΔL|<1e-06: epoka 265 ± 172, koszt 0.37 ± 0.213  [1.4 s / przebieg]
+                         koszt train: start = 995 ± 370  po 1. epoce = 8.54e+03 ± 4.15e+03  maks. = 3.22e+11 ± 4.55e+11  |dW| warstwy 1 na starcie = 340 ± 72.6
+                         koszt train = 0.284 ± 0.268  koszt test = 2.56 ± 1.95  min koszt test = 2.31 ± 1.71  accuracy = 0.607 ± 0.046  F1 = 0.444 ± 0.316  [F1 dla seedów: 0.711, 0.000, 0.621]
+init N(0, 10) (zepsuta)  koniec plateau: — (nie wyszło: 3/3)  rozbieżność: 3/3 (epoka 1 ± 0)  stop |ΔL|<1e-06: epoka —, koszt —  [0.0 s / przebieg]
+                         koszt train: start = 9.95e+08 ± 3.7e+08  po 1. epoce = 4.06e+30 ± 4.77e+30  maks. = 4.06e+30 ± 4.77e+30  |dW| warstwy 1 na starcie = 3.4e+07 ± 7.26e+06
+                         koszt train = —  koszt test = —  min koszt test = —  accuracy = 0.486 ± 0.039  F1 = 0.419 ± 0.297  [F1 dla seedów: 0.629, 0.629, 0.000]
+
+=== GD (lr = 0.01) vs ADAM (lr = 0.001), 5 warstw ukrytych, pełny zbiór ===  (2000 epok, średnia ± odchylenie z 3 seedów)
+GD, init 0.01            koniec plateau: — (nie wyszło: 3/3)  rozbieżność: 0/3 (epoka —)  stop |ΔL|<1e-06: epoka 569 ± 0, koszt 0.69 ± 1.38e-07  [2.4 s / przebieg]
+                         koszt train: start = 0.693 ± 9.58e-11  po 1. epoce = 0.693 ± 9.63e-09  maks. = 0.693 ± 9.58e-11  |dW| warstwy 1 na starcie = 1.79e-08 ± 1.73e-09
+                         koszt train = 0.69 ± 4.19e-10  koszt test = 0.69 ± 6.55e-11  min koszt test = 0.69 ± 1.24e-10  accuracy = 0.541 ± 0.000  F1 = 0.000 ± 0.000  [F1 dla seedów: 0.000, 0.000, 0.000]
+ADAM, init 0.01          koniec plateau: 67 ± 7 (nie wyszło: 0/3)  rozbieżność: 0/3 (epoka —)  stop |ΔL|<1e-06: epoka 840 ± 188, koszt 0.053 ± 0.027  [2.4 s / przebieg]
+                         koszt train: start = 0.693 ± 9.58e-11  po 1. epoce = 0.693 ± 7.57e-07  maks. = 1.76 ± 1.51  |dW| warstwy 1 na starcie = 1.79e-08 ± 1.73e-09
+                         koszt train = 0.0404 ± 0.0318  koszt test = 3.94 ± 0.883  min koszt test = 0.463 ± 0.0532  accuracy = 0.760 ± 0.028  F1 = 0.764 ± 0.024  [F1 dla seedów: 0.774, 0.730, 0.787]
+GD, init He              koniec plateau: 107 ± 48 (nie wyszło: 0/3)  rozbieżność: 0/3 (epoka —)  stop |ΔL|<1e-06: epoka —, koszt —  [2.2 s / przebieg]
+                         koszt train: start = 0.782 ± 0.0699  po 1. epoce = 0.772 ± 0.0656  maks. = 0.782 ± 0.0699  |dW| warstwy 1 na starcie = 0.292 ± 0.0697
+                         koszt train = 0.0445 ± 0.0215  koszt test = 0.812 ± 0.144  min koszt test = 0.409 ± 0.0143  accuracy = 0.787 ± 0.035  F1 = 0.784 ± 0.037  [F1 dla seedów: 0.733, 0.820, 0.800]
+ADAM, init He            koniec plateau: 15 ± 6 (nie wyszło: 0/3)  rozbieżność: 0/3 (epoka —)  stop |ΔL|<1e-06: epoka 497 ± 164, koszt 0.000152 ± 2.74e-05  [2.5 s / przebieg]
+                         koszt train: start = 0.782 ± 0.0699  po 1. epoce = 0.758 ± 0.0654  maks. = 0.782 ± 0.0699  |dW| warstwy 1 na starcie = 0.292 ± 0.0697
+                         koszt train = 5.27e-06 ± 2.44e-06  koszt test = 2.97 ± 0.548  min koszt test = 0.407 ± 0.0107  accuracy = 0.760 ± 0.008  F1 = 0.756 ± 0.009  [F1 dla seedów: 0.746, 0.767, 0.754]
+GD, init 1               koniec plateau: 126 ± 98 (nie wyszło: 1/3)  rozbieżność: 1/3 (epoka 4 ± 0)  stop |ΔL|<1e-06: epoka 265 ± 172, koszt 0.37 ± 0.213  [1.5 s / przebieg]
+                         koszt train: start = 995 ± 370  po 1. epoce = 8.54e+03 ± 4.15e+03  maks. = 3.22e+11 ± 4.55e+11  |dW| warstwy 1 na starcie = 340 ± 72.6
+                         koszt train = 0.284 ± 0.268  koszt test = 2.56 ± 1.95  min koszt test = 2.31 ± 1.71  accuracy = 0.607 ± 0.046  F1 = 0.444 ± 0.316  [F1 dla seedów: 0.711, 0.000, 0.621]
+ADAM, init 1             koniec plateau: 324 ± 103 (nie wyszło: 0/3)  rozbieżność: 0/3 (epoka —)  stop |ΔL|<1e-06: epoka 544 ± 101, koszt 0.000212 ± 5.43e-05  [2.5 s / przebieg]
+                         koszt train: start = 995 ± 370  po 1. epoce = 959 ± 367  maks. = 995 ± 370  |dW| warstwy 1 na starcie = 340 ± 72.6
+                         koszt train = 1.99e-05 ± 1.08e-05  koszt test = 75 ± 4.94  min koszt test = 74.3 ± 4.52  accuracy = 0.672 ± 0.035  F1 = 0.659 ± 0.035  [F1 dla seedów: 0.610, 0.689, 0.679]
+
+=== Tryby uczenia, init He (5 warstw ukrytych, GD lr = 0.01) ===  (300 epok, średnia ± odchylenie z 3 seedów)
+pełny zbiór (242)        koniec plateau: 107 ± 48 (nie wyszło: 0/3)  rozbieżność: 0/3 (epoka —)  stop |ΔL|<1e-06: epoka —, koszt —  [0.4 s / przebieg]
+                         koszt train: start = 0.782 ± 0.0699  po 1. epoce = 0.772 ± 0.0656  maks. = 0.782 ± 0.0699  |dW| warstwy 1 na starcie = 0.292 ± 0.0697
+                         koszt train = 0.393 ± 0.055  koszt test = 0.454 ± 0.0348  min koszt test = 0.454 ± 0.0348  accuracy = 0.798 ± 0.020  F1 = 0.779 ± 0.037  [F1 dla seedów: 0.786, 0.820, 0.731]
+paczki po 32             koniec plateau: 14 ± 6 (nie wyszło: 0/3)  rozbieżność: 0/3 (epoka —)  stop |ΔL|<1e-06: epoka —, koszt —  [0.7 s / przebieg]
+                         koszt train: start = 0.782 ± 0.0699  po 1. epoce = 0.725 ± 0.0474  maks. = 0.782 ± 0.0699  |dW| warstwy 1 na starcie = 0.292 ± 0.0697
+                         koszt train = 0.0305 ± 0.0151  koszt test = 0.962 ± 0.198  min koszt test = 0.4 ± 0.0176  accuracy = 0.776 ± 0.041  F1 = 0.779 ± 0.037  [F1 dla seedów: 0.730, 0.820, 0.787]
+pojedyncze przykłady (1) koniec plateau: 1 ± 0 (nie wyszło: 0/3)  rozbieżność: 0/3 (epoka —)  stop |ΔL|<1e-06: epoka 131 ± 6, koszt 9.43e-05 ± 7.7e-06  [7.6 s / przebieg]
+                         koszt train: start = 0.782 ± 0.0699  po 1. epoce = 0.482 ± 0.0626  maks. = 0.81 ± 0.0668  |dW| warstwy 1 na starcie = 0.292 ± 0.0697
+                         koszt train = 2.85e-05 ± 3.55e-06  koszt test = 3.01 ± 0.473  min koszt test = 0.413 ± 0.0195  accuracy = 0.749 ± 0.020  F1 = 0.747 ± 0.025  [F1 dla seedów: 0.712, 0.762, 0.767]
+
+=== Tryby uczenia, init N(0, 0.01) (5 warstw ukrytych, GD lr = 0.01) ===  (300 epok, średnia ± odchylenie z 3 seedów)
+pełny zbiór (242)        koniec plateau: — (nie wyszło: 3/3)  rozbieżność: 0/3 (epoka —)  stop |ΔL|<1e-06: epoka —, koszt —  [0.3 s / przebieg]
+                         koszt train: start = 0.693 ± 9.58e-11  po 1. epoce = 0.693 ± 9.63e-09  maks. = 0.693 ± 9.58e-11  |dW| warstwy 1 na starcie = 1.79e-08 ± 1.73e-09
+                         koszt train = 0.69 ± 2.99e-07  koszt test = 0.691 ± 2.94e-07  min koszt test = 0.691 ± 2.94e-07  accuracy = 0.541 ± 0.000  F1 = 0.000 ± 0.000  [F1 dla seedów: 0.000, 0.000, 0.000]
+paczki po 32             koniec plateau: — (nie wyszło: 3/3)  rozbieżność: 0/3 (epoka —)  stop |ΔL|<1e-06: epoka 82 ± 12, koszt 0.69 ± 8.52e-05  [0.7 s / przebieg]
+                         koszt train: start = 0.693 ± 9.58e-11  po 1. epoce = 0.693 ± 1.61e-05  maks. = 0.693 ± 9.58e-11  |dW| warstwy 1 na starcie = 1.79e-08 ± 1.73e-09
+                         koszt train = 0.69 ± 1.58e-08  koszt test = 0.69 ± 1.38e-07  min koszt test = 0.69 ± 2.07e-09  accuracy = 0.541 ± 0.000  F1 = 0.000 ± 0.000  [F1 dla seedów: 0.000, 0.000, 0.000]
+pojedyncze przykłady (1) koniec plateau: — (nie wyszło: 3/3)  rozbieżność: 0/3 (epoka —)  stop |ΔL|<1e-06: epoka 9 ± 2, koszt 0.69 ± 7.96e-07  [7.7 s / przebieg]
+                         koszt train: start = 0.693 ± 9.58e-11  po 1. epoce = 0.691 ± 7.67e-05  maks. = 0.693 ± 9.58e-11  |dW| warstwy 1 na starcie = 1.79e-08 ± 1.73e-09
+                         koszt train = 0.69 ± 5.66e-06  koszt test = 0.69 ± 6.89e-06  min koszt test = 0.69 ± 1.25e-10  accuracy = 0.541 ± 0.000  F1 = 0.000 ± 0.000  [F1 dla seedów: 0.000, 0.000, 0.000]
+
+Całkowity czas: 114 s

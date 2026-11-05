@@ -1,0 +1,8 @@
+Sprawdzenie gradientu: backward vs iloraz różnicowy
+  warstwa Linear 1, W: max błąd względny = 1.49e-08
+  warstwa Linear 1, b: max błąd względny = 8.65e-10
+  warstwa Linear 2, W: max błąd względny = 2.14e-09
+  warstwa Linear 2, b: max błąd względny = 3.62e-09
+  warstwa Linear 3, W: max błąd względny = 1.17e-09
+  warstwa Linear 3, b: max błąd względny = 2.55e-10
+największy błąd względny: 1.49e-08  ->  OK
