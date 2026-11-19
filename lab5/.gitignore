@@ -1,0 +1,2 @@
+# zbiór CIFAR10 - notatnik bierze go z ../lab4/data, a jeśli go tam nie ma, pobiera tutaj
+data/
